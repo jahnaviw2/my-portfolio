@@ -1,5 +1,5 @@
 // app/page.tsx
-import ProjectCard from "@/components/ProjectCard";
+import {ProjectCard} from "@/components/ProjectCard";
 import { projectsData } from "@/data/projects";
 import { skillCategories } from "@/data/skills";
 export default function Home() {
