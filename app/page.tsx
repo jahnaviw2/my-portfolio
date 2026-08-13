@@ -181,8 +181,8 @@ export default function Home() {
         <p className="text-gray-400">Get in touch:</p>
         <div className="flex justify-center gap-6">
           <a href="https://github.com/jahnaviw2" target="_blank" className="hover:underline">GitHub</a>
-          <a href="https://linkedin.com/in/your-profile" target="_blank" className="hover:underline">LinkedIn</a>
-          <a href="mailto:your-email@example.com" className="hover:underline">Email</a>
+          <a href="https://www.linkedin.com/in/jahnavi-a-w2/" target="_blank" className="hover:underline">LinkedIn</a>
+          <a href="mailto:jahnaviw2@gmail.com" className="hover:underline">Email</a>
         </div>
       </footer>
 
