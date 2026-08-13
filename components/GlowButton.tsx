@@ -21,7 +21,7 @@ export const GlowButton = ({ href, children, variant = 'primary' }: GlowButtonPr
       }`}
     >
       <span>{children}</span>
-      <span class="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+      <span className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
         ↗
       </span>
     </a>
