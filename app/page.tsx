@@ -1,69 +1,192 @@
-import Image from "next/image";
-
+// app/page.tsx
+import ProjectCard from "@/components/ProjectCard";
+import { projectsData } from "@/data/projects";
+import { skillCategories } from "@/data/skills";
 export default function Home() {
+  const stats = [
+    { value: "99.9%", label: "UPTIME TARGET" },
+    { value: "15+", label: "REPOSITORIES" },
+    { value: "AWS / K8s", label: "STACK FOCUS" },
+    { value: "0", label: "UNRESOLVED POSTMORTEMS" },
+  ];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen bg-[#060913] text-gray-200 pb-20">
+      {/* --- HERO SECTION --- */}
+      <section className="flex flex-col items-center text-center pt-24 pb-16 px-4">
+        {/* Terminal Status Badge */}
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 font-mono text-xs">
+          <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+          SYSTEM // ONLINE
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+
+        {/* Main Identity */}
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white mt-4">
+          Jahnavi A
+        </h1>
+        <p className="text-xl md:text-2xl font-mono text-cyan-400 mt-2">
+          SRE & PLATFORM ENGINEER
+        </p>
+
+        {/* Quick Summary */}
+        <p className="text-gray-400 max-w-2xl mt-4 text-sm md:text-base leading-relaxed">
+          Building automated deployment infrastructure, self-healing architectures, and 
+          production observability across distributed environments.
+        </p>
+
+        {/* Metric Stat Blocks */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 w-full max-w-3xl">
+          {stats.map((stat, i) => (
+            <div
+              key={i}
+              className="p-4 rounded-lg bg-white/[0.03] border border-white/10 text-center"
+            >
+              <div className="text-2xl md:text-3xl font-black font-mono text-cyan-300">
+                {stat.value}
+              </div>
+              <div className="text-[11px] font-mono text-gray-400 tracking-wider mt-1">
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Call to Action Buttons */}
+        <div className="flex flex-wrap gap-4 mt-8">
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#projects"
+            className="px-6 py-2.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-black font-semibold text-sm transition-colors"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
+            View Projects
           </a>
           <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="/resume.pdf"
             target="_blank"
-            rel="noopener noreferrer"
+            className="px-6 py-2.5 rounded-lg border border-white/20 hover:border-white/40 text-white font-medium text-sm transition-colors"
           >
-            Documentation
+            Download CV
           </a>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* --- FEATURED PROJECTS SECTION --- */}
+      <section id="projects" className="max-w-5xl mx-auto px-4 mt-8">
+        <h2 className="text-xl font-bold text-white font-mono mb-6 flex items-center gap-2 border-b border-white/10 pb-3">
+          <span className="text-cyan-400">&gt;</span> FEATURED_PROJECTS
+        </h2>
+
+        {/* Project Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <ProjectCard
+            title="Automated K8s GitOps Pipeline"
+            subtitle="Infrastructure & Automation"
+            description="Designed a zero-downtime deployment pipeline using ArgoCD and GitHub Actions for automated cluster rollouts."
+            metric="< 2 MIN"
+            metricLabel="DEPLOY TIME"
+            tags={["Kubernetes", "ArgoCD", "Terraform", "GitHub Actions"]}
+            githubUrl="https://github.com"
+          />
+        </div>
+      </section>
+
+      {/* 3. PUT THE SPRINT 5 SECTION INSIDE THE <main> TAG HERE */}
+      <section className="my-12">
+        <h2 className="text-2xl font-bold mb-6 text-white border-b border-gray-800 pb-2">
+          Featured Projects
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projectsData.map((project, index) => (
+            <div 
+              key={index} 
+              className="bg-[#131b2e] border border-gray-800 rounded-xl p-6 flex flex-col justify-between hover:border-gray-700 transition"
+            >
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-2">
+                  {project.title}
+                </h3>
+                
+                <p className="text-sm text-gray-400 mb-4">
+                  {project.description}
+                </p>
+
+                <div className="text-xs font-mono text-emerald-400 bg-emerald-950/40 border border-emerald-800/50 rounded p-2 mb-4">
+                  📈 {project.metrics}
+                </div>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tags.map((tag, tagIdx) => (
+                    <span 
+                      key={tagIdx} 
+                      className="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded-md"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 pt-4 border-t border-gray-800/60">
+                <a 
+                  href={project.liveDemoUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-xs font-medium text-blue-400 hover:text-blue-300 transition"
+                >
+                  Live Demo ↗
+                </a>
+                <a 
+                  href={project.githubUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-xs font-medium text-gray-400 hover:text-white transition"
+                >
+                  GitHub Code ↗
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+        {/*sprint 6 */}
+      </section>
+      <section className="my-12">
+        <h2 className="text-2xl font-bold mb-6">Skills & Expertise</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {skillCategories.map((cat, idx) => (
+            <div key={idx} className="p-4 border border-gray-800 rounded-lg bg-white/5">
+              <h3 className="font-semibold mb-3">{cat.title}</h3>
+              <div className="flex flex-wrap gap-2">
+                {cat.skills.map((skill) => (
+                  <span key={skill} className="px-3 py-1 text-xs bg-white/10 rounded-full border border-white/10">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section className="my-12">
+        <h2 className="text-2xl font-bold mb-6">Experience</h2>
+        <div className="border-l-2 border-gray-800 pl-4 space-y-6">
+          <div>
+            <span className="text-sm text-gray-400">2022 - Present</span>
+            <h3 className="text-lg font-semibold">Observability & Reliability Engineer</h3>
+            <p className="text-sm text-gray-400">Designed PLG stack and automated K8s infrastructure using Terraform.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer className="mt-16 pt-8 border-t border-gray-800 text-center space-y-4">
+        <p className="text-gray-400">Get in touch:</p>
+        <div className="flex justify-center gap-6">
+          <a href="https://github.com/jahnaviw2" target="_blank" className="hover:underline">GitHub</a>
+          <a href="https://linkedin.com/in/your-profile" target="_blank" className="hover:underline">LinkedIn</a>
+          <a href="mailto:your-email@example.com" className="hover:underline">Email</a>
+        </div>
+      </footer>
+
+
+    </main>
   );
 }
