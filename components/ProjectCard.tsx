@@ -3,8 +3,10 @@ import { GlowButton } from './GlowButton';
 
 interface ProjectCardProps {
   title: string;
+  subtitle?: string; // Added optional prop
   description: string;
   metric?: string;
+  metricLabel?: string; // Added optional prop
   tags: string[];
   liveUrl?: string;
   githubUrl: string;
@@ -12,8 +14,10 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
+  subtitle,
   description,
   metric,
+  metricLabel,
   tags,
   liveUrl,
   githubUrl,
@@ -26,13 +30,19 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           {title}
         </h3>
         
+        {subtitle && (
+          <p className="text-xs font-semibold uppercase tracking-wider text-cyan-400">
+            {subtitle}
+          </p>
+        )}
+
         <p className="text-sm leading-relaxed text-slate-400">
           {description}
         </p>
 
-        {metric && (
+        {(metric || metricLabel) && (
           <div className="mt-2 inline-block rounded-lg border border-emerald-500/20 bg-emerald-950/30 px-3 py-1 text-xs font-medium text-emerald-400 backdrop-blur-sm">
-            {metric}
+            {metric} {metricLabel}
           </div>
         )}
       </div>
