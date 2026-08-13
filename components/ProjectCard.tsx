@@ -1,97 +1,68 @@
-// components/ProjectCard.tsx
-export interface ProjectProps {
+import React from 'react';
+import { GlowButton } from './GlowButton';
+
+interface ProjectCardProps {
   title: string;
-  subtitle?: string;
   description: string;
   metric?: string;
-  metricLabel?: string;
   tags: string[];
   liveUrl?: string;
-  githubUrl?: string;
+  githubUrl: string;
 }
 
-export default function ProjectCard({
+export const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
-  subtitle,
   description,
   metric,
-  metricLabel,
   tags,
   liveUrl,
   githubUrl,
-}: ProjectProps) {
+}) => {
   return (
-    <div className="flex flex-col justify-between rounded-xl border border-white/10 bg-white/[0.02] p-6 hover:border-cyan-500/40 transition-colors duration-200">
-      <div>
-        {/* Header & Subtitle */}
-        <div className="flex justify-between items-start gap-4">
-          <div>
-            {subtitle && (
-              <span className="text-xs font-mono text-cyan-400 tracking-wider uppercase block mb-1">
-                {subtitle}
-              </span>
-            )}
-            <h3 className="text-xl font-bold text-white tracking-wide">{title}</h3>
-          </div>
-
-          {/* Key Metric Callout (e.g. Uptime, Latency) */}
-          {metric && (
-            <div className="text-right shrink-0">
-              <span className="text-xl md:text-2xl font-black font-mono text-cyan-300">
-                {metric}
-              </span>
-              {metricLabel && (
-                <span className="block text-[10px] uppercase font-mono text-gray-400 tracking-wider">
-                  {metricLabel}
-                </span>
-              )}
-            </div>
-          )}
-        </div>
-
-        {/* Project Description */}
-        <p className="mt-3 text-sm text-gray-300 leading-relaxed">
+    <div className="group relative flex flex-col justify-between rounded-2xl border border-white/10 bg-slate-900/40 p-6 backdrop-blur-lg transition-all duration-300 hover:border-cyan-500/40 hover:shadow-[0_0_25px_rgba(34,211,238,0.15)]">
+      {/* Header & Content */}
+      <div className="space-y-3">
+        <h3 className="text-xl font-bold text-slate-100 transition-colors group-hover:text-cyan-300">
+          {title}
+        </h3>
+        
+        <p className="text-sm leading-relaxed text-slate-400">
           {description}
         </p>
 
-        {/* Tech Stack Badges */}
-        <div className="mt-4 flex flex-wrap gap-2">
+        {metric && (
+          <div className="mt-2 inline-block rounded-lg border border-emerald-500/20 bg-emerald-950/30 px-3 py-1 text-xs font-medium text-emerald-400 backdrop-blur-sm">
+            {metric}
+          </div>
+        )}
+      </div>
+
+      {/* Footer: Badges & Glow Buttons */}
+      <div className="mt-6 space-y-4">
+        {/* Tech Badges */}
+        <div className="flex flex-wrap gap-2">
           {tags.map((tag) => (
             <span
               key={tag}
-              className="text-xs font-mono px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300"
+              className="rounded-full border border-cyan-500/20 bg-cyan-950/30 px-3 py-1 text-xs text-cyan-300 backdrop-blur-sm"
             >
               {tag}
             </span>
           ))}
         </div>
-      </div>
 
-      {/* External Links */}
-      {(liveUrl || githubUrl) && (
-        <div className="mt-6 pt-4 border-t border-white/5 flex gap-3 text-xs font-mono">
+        {/* Action Buttons */}
+        <div className="flex items-center gap-3 pt-2">
           {liveUrl && (
-            <a
-              href={liveUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="px-3 py-1.5 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/20 transition-colors"
-            >
-              Live Demo ↗
-            </a>
+            <GlowButton href={liveUrl} variant="primary">
+              Live Demo
+            </GlowButton>
           )}
-          {githubUrl && (
-            <a
-              href={githubUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="px-3 py-1.5 rounded bg-white/5 border border-white/10 text-gray-300 hover:bg-white/10 transition-colors"
-            >
-              GitHub ↗
-            </a>
-          )}
+          <GlowButton href={githubUrl} variant={liveUrl ? 'secondary' : 'primary'}>
+            GitHub Code
+          </GlowButton>
         </div>
-      )}
+      </div>
     </div>
   );
-}
+};
