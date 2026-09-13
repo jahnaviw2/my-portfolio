@@ -4,15 +4,20 @@ export interface Project {
 }
 export const skillCategories = [
   {
-    title: "Infrastructure & Cloud",
-    skills: ["AWS", "Kubernetes", "Terraform", "Docker"],
+    title: "Languages & Core",
+    skills: ["Python", "JavaScript", "HTML", "CSS", "SQL"],
   },
   {
-    title: "CI/CD & Automation",
-    skills: ["GitHub Actions", "Helm", "ArgoCD", "Bash"],
+    title: "Cloud & Orchestration",
+    skills: ["AWS", "GCP", "Kubernetes"],
   },
   {
-    title: "Observability & SRE",
-    skills: ["Prometheus", "Grafana", "Loki", "OpenTelemetry"],
+    title: "Observability & Monitoring",
+    skills: ["ELK Stack", "Grafana", "Prometheus", "Catchpoint"],
+  },
+  {
+    title: "Tools & Databases",
+    skills: ["MySQL", "Git", "GitHub", "Bitbucket"]
   },
 ];
+

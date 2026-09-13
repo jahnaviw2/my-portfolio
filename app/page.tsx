@@ -4,14 +4,14 @@ import { projectsData } from "@/data/projects";
 import { skillCategories } from "@/data/skills";
 export default function Home() {
   const stats = [
-    { value: "2Years 10M", label: "YEARS EXPERIENCE" },
+    { value: "2+", label: "YEARS EXPERIENCE" },
     { value: "ELK & Grafana", label: "OBSERVABILITY STACK" },
     { value: "AWS /GCP", label: "CLOUD PLATFORMS" },
     { value: "100%", label: "AUTOMATION FOCUS" },
   ];
 
   return (
-    <main className="min-h-screen bg-[#060913] text-gray-200 pb-20">
+    <main className="min-h-screen max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
       {/* --- HERO SECTION --- */}
       <section className="flex flex-col items-center text-center pt-24 pb-16 px-4">
         {/* Terminal Status Badge */}
@@ -30,8 +30,7 @@ export default function Home() {
 
         {/* Quick Summary */}
         <p className="text-gray-400 max-w-2xl mt-4 text-sm md:text-base leading-relaxed">
-          Building automated deployment infrastructure, self-healing architectures, and 
-          production observability across distributed environments.
+          Associate Software Developer specializing in cloud monitoring, infrastructure observability, automated operational tools, and production incident troubleshooting across AWS and GCP environments.
         </p>
 
         {/* Metric Stat Blocks */}
