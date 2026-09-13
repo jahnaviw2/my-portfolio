@@ -125,7 +125,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 pt-4 border-t border-gray-800/60">
+              {/* <div className="flex items-center gap-3 pt-4 border-t border-gray-800/60">
                 <a 
                   href={project.liveDemoUrl} 
                   target="_blank" 
@@ -142,7 +142,7 @@ export default function Home() {
                 >
                   GitHub Code ↗
                 </a>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>
