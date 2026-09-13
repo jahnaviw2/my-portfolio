@@ -11,7 +11,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <main className="min-h-screen bg-slate-950 text-slate-100 px-6 py-12 pb-24 max-w-5xl mx-auto">
       {/* --- HERO SECTION --- */}
       <section className="flex flex-col items-center text-center pt-24 pb-16 px-4">
         {/* Terminal Status Badge */}
@@ -213,7 +213,8 @@ export default function Home() {
 </div>
       </section>
 
-      <footer className="mt-16 pt-8 border-t border-gray-800 text-center space-y-4">
+      <footer className="mt-16 pt-8 pb-16 border-t border-gray-800 text-center space-y-4">
+        
         <h2 className="text-xl font-bold text-white mb-4">Get in touch</h2>
         <div className="flex justify-center gap-6">
           <a href="https://github.com/jahnaviw2" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-xs font-mono font-medium rounded-lg bg-slate-800 text-cyan-400 border border-slate-700 hover:border-cyan-400 hover:text-white transition-colors inline-block">GitHub ↗</a>
