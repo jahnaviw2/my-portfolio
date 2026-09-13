@@ -68,14 +68,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- FEATURED PROJECTS SECTION --- */}
+      {/* --- FEATURED PROJECTS SECTION  */}
+     
       <section id="projects" className="max-w-5xl mx-auto px-4 mt-8">
         <h2 className="text-xl font-bold text-white font-mono mb-6 flex items-center gap-2 border-b border-white/10 pb-3">
           <span className="text-cyan-400">&gt;</span> FEATURED_PROJECTS
         </h2>
 
         {/* Project Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <ProjectCard
             title="Automated K8s GitOps Pipeline"
             subtitle="Infrastructure & Automation"
@@ -85,8 +86,10 @@ export default function Home() {
             tags={["Kubernetes", "ArgoCD", "Terraform", "GitHub Actions"]}
             githubUrl="https://github.com"
           />
-        </div>
-      </section>
+        </div> */}
+      </section>  
+     
+  
 
       {/* 3. PUT THE SPRINT 5 SECTION INSIDE THE <main> TAG HERE */}
       <section className="my-12">
@@ -149,14 +152,14 @@ export default function Home() {
         {/*sprint 6 */}
       </section>
       <section className="my-12">
-        <h2 className="text-2xl font-bold mb-6">Skills & Expertise</h2>
+        <h2 className="text-2xl font-bold mb-6 text-white">Skills & Expertise</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {skillCategories.map((cat, idx) => (
             <div key={idx} className="p-4 border border-gray-800 rounded-lg bg-white/5">
-              <h3 className="font-semibold mb-3">{cat.title}</h3>
+              <h3 className="font-semibold mb-3 text-cyan-400">{cat.title}</h3>
               <div className="flex flex-wrap gap-2">
                 {cat.skills.map((skill) => (
-                  <span key={skill} className="px-3 py-1 text-xs bg-white/10 rounded-full border border-white/10">
+                  <span key={skill} className="px-3 py-1 text-xs font-mono font-medium bg-slate-800 text-slate-200 rounded-full border border-slate-700">
                     {skill}
                   </span>
                 ))}
