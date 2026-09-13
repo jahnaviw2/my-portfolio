@@ -60,7 +60,7 @@ export default function Home() {
           </a>
           <a
             href="/resume.pdf"
-            download="JahnaviA_Resume.pdf"
+            download="resume.pdf"
             className="px-6 py-3 rounded-lg border border-slate-700 hover:border-cyan-400 font-mono text-sm transition-colors text-white inline-block"
           >
             Download CV
@@ -222,9 +222,9 @@ export default function Home() {
       <footer className="mt-16 pt-8 border-t border-gray-800 text-center space-y-4">
         <h2 className="text-xl font-bold text-white mb-4">Get in touch</h2>
         <div className="flex justify-center gap-6">
-          <a href="https://github.com/jahnaviw2" target="_blank" className="hover:underline">GitHub</a>
-          <a href="https://www.linkedin.com/in/jahnavi-a-w2/" target="_blank" className="hover:underline">LinkedIn</a>
-          <a href="mailto:jahnaviw2@gmail.com" className="hover:underline">Email</a>
+          <a href="https://github.com/jahnaviw2" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-xs font-mono font-medium rounded-lg bg-slate-800 text-cyan-400 border border-slate-700 hover:border-cyan-400 hover:text-white transition-colors inline-block">GitHub ↗</a>
+          <a href="https://linkedin.com/in/jahnavi-a-w2" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-xs font-mono font-medium rounded-lg bg-slate-800 text-cyan-400 border border-slate-700 hover:border-cyan-400 hover:text-white transition-colors inline-block">LinkedIn ↗</a>
+          <a href="mailto:your.email@example.com" className="px-4 py-2 text-xs font-mono font-medium rounded-lg bg-slate-800 text-cyan-400 border border-slate-700 hover:border-cyan-400 hover:text-white transition-colors inline-block">Email ↗</a>
         </div>
       </footer>
 
