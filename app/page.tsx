@@ -4,10 +4,10 @@ import { projectsData } from "@/data/projects";
 import { skillCategories } from "@/data/skills";
 export default function Home() {
   const stats = [
-    { value: "99.9%", label: "UPTIME TARGET" },
-    { value: "15+", label: "REPOSITORIES" },
-    { value: "AWS / K8s", label: "STACK FOCUS" },
-    { value: "0", label: "UNRESOLVED POSTMORTEMS" },
+    { value: "2Years 10M", label: "YEARS EXPERIENCE" },
+    { value: "ELK & Grafana", label: "OBSERVABILITY STACK" },
+    { value: "AWS /GCP", label: "CLOUD PLATFORMS" },
+    { value: "100%", label: "AUTOMATION FOCUS" },
   ];
 
   return (
@@ -168,13 +168,53 @@ export default function Home() {
       </section>
       <section className="my-12">
         <h2 className="text-2xl font-bold mb-6">Experience</h2>
-        <div className="border-l-2 border-gray-800 pl-4 space-y-6">
-          <div>
-            <span className="text-sm text-gray-400">2022 - Present</span>
-            <h3 className="text-lg font-semibold">Observability & Reliability Engineer</h3>
-            <p className="text-sm text-gray-400">Designed PLG stack and automated K8s infrastructure using Terraform.</p>
-          </div>
-        </div>
+        <div className="space-y-6">
+  {/* TransUnion - Full Time */}
+  <div className="border border-slate-800 bg-slate-900/40 p-6 rounded-xl">
+    <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
+      <div>
+        <h3 className="text-xl font-bold text-white">Associate Software Developer</h3>
+        <p className="text-cyan-400 font-mono text-sm">TransUnion • Hyderabad, India</p>
+      </div>
+      <span className="text-xs font-mono text-slate-400 bg-slate-800 px-3 py-1 rounded-full w-fit mt-2 md:mt-0">
+        Jul 2023 – Nov 2025
+      </span>
+    </div>
+    <ul className="list-disc list-inside space-y-2 text-slate-300 text-sm">
+      <li>Built Grafana dashboards and Prometheus alerts to improve infrastructure visibility and proactive monitoring.</li>
+      <li>Managed centralized logging using ELK Stack for production applications and performed log analysis to troubleshoot critical incidents.</li>
+      <li>Supported Kubernetes workloads deployed across AWS and Google Cloud Platform (GCP).</li>
+      <li>Automated operational monitoring tasks using Python, reducing manual effort and improving operational efficiency.</li>
+      <li>Collaborated with cross-functional engineering teams using Agile methodologies to enhance platform reliability.</li>
+    </ul>
+    <div className="mt-4 pt-3 border-t border-slate-800 flex flex-wrap gap-2 text-xs font-mono text-cyan-300">
+      <span>#Python</span>
+      <span>#AWS</span>
+      <span>#GCP</span>
+      <span>#Kubernetes</span>
+      <span>#ELKStack</span>
+      <span>#Grafana</span>
+      <span>#Prometheus</span>
+    </div>
+  </div>
+
+  {/* TransUnion - Internship */}
+  <div className="border border-slate-800 bg-slate-900/40 p-6 rounded-xl">
+    <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
+      <div>
+        <h3 className="text-xl font-bold text-white">Software Developer Intern</h3>
+        <p className="text-cyan-400 font-mono text-sm">TransUnion • Hyderabad, India</p>
+      </div>
+      <span className="text-xs font-mono text-slate-400 bg-slate-800 px-3 py-1 rounded-full w-fit mt-2 md:mt-0">
+        Mar 2023 – Jul 2023
+      </span>
+    </div>
+    <ul className="list-disc list-inside space-y-2 text-slate-300 text-sm">
+      <li>Assisted in monitoring, automation, testing, and debugging of enterprise applications.</li>
+      <li>Worked with Python and SQL to support cloud-based operational tools and internal applications.</li>
+    </ul>
+  </div>
+</div>
       </section>
 
       <footer className="mt-16 pt-8 border-t border-gray-800 text-center space-y-4">
