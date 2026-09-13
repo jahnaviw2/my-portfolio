@@ -60,8 +60,8 @@ export default function Home() {
           </a>
           <a
             href="/resume.pdf"
-            target="_blank"
-            className="px-6 py-2.5 rounded-lg border border-white/20 hover:border-white/40 text-white font-medium text-sm transition-colors"
+            download="JahnaviA_Resume.pdf"
+            className="px-6 py-3 rounded-lg border border-slate-700 hover:border-cyan-400 font-mono text-sm transition-colors text-white inline-block"
           >
             Download CV
           </a>
@@ -71,9 +71,9 @@ export default function Home() {
       {/* --- FEATURED PROJECTS SECTION  */}
      
       <section id="projects" className="max-w-5xl mx-auto px-4 mt-8">
-        <h2 className="text-xl font-bold text-white font-mono mb-6 flex items-center gap-2 border-b border-white/10 pb-3">
+        {/* <h2 className="text-xl font-bold text-white font-mono mb-6 flex items-center gap-2 border-b border-white/10 pb-3">
           <span className="text-cyan-400">&gt;</span> FEATURED_PROJECTS
-        </h2>
+        </h2> */}
 
         {/* Project Grid */}
         {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -169,7 +169,7 @@ export default function Home() {
         </div>
       </section>
       <section className="my-12">
-        <h2 className="text-2xl font-bold mb-6">Experience</h2>
+        <h2 className="text-2xl font-bold mb-6 text-white">Experience</h2>
         <div className="space-y-6">
   {/* TransUnion - Full Time */}
   <div className="border border-slate-800 bg-slate-900/40 p-6 rounded-xl">
@@ -220,7 +220,7 @@ export default function Home() {
       </section>
 
       <footer className="mt-16 pt-8 border-t border-gray-800 text-center space-y-4">
-        <p className="text-gray-400">Get in touch:</p>
+        <h2 className="text-xl font-bold text-white mb-4">Get in touch</h2>
         <div className="flex justify-center gap-6">
           <a href="https://github.com/jahnaviw2" target="_blank" className="hover:underline">GitHub</a>
           <a href="https://www.linkedin.com/in/jahnavi-a-w2/" target="_blank" className="hover:underline">LinkedIn</a>
