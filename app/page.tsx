@@ -58,13 +58,7 @@ export default function Home() {
           >
             View Projects
           </a>
-          <a
-            href="myportfolio/resume.pdf"
-            download="resume.pdf"
-            className="px-6 py-3 rounded-lg border border-slate-700 hover:border-cyan-400 font-mono text-sm transition-colors text-white inline-block"
-          >
-            Download CV
-          </a>
+<a href="https://jahnaviw2.github.io/my-portfolio/resume.pdf" download="resume.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-lg border border-slate-700 hover:border-cyan-400 font-mono text-sm transition-colors text-white inline-block">Download CV</a>
         </div>
       </section>
 
